@@ -9,7 +9,7 @@ import {
     HeroSectionTitle,
     HeroSectionImgAb
 } from "./sections.styled";
-
+import {Link} from "react-router-dom"
 import Vector from '../assets/vector.png'
 
 export const Hero: FC = () => {
@@ -21,13 +21,22 @@ export const Hero: FC = () => {
                 <HeroSectionSubtitle>We will help to develop every smallest thing into a big one for your
                     company.</HeroSectionSubtitle>
                 <HeroSectionBtn>
-                    <span>Shop</span>
-                    <img src={Vector} alt="vector"/>
+                    <Link style={{
+                        textDecoration: 'none',
+                        color: 'white',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-around',
+                        width: '100%'
+                    }} to="/shop">
+                        <span>Shop</span>
+                        <img src={Vector} alt="vector"/>
+                    </Link>
                 </HeroSectionBtn>
             </HeroSectionDesc>
             <HeroSectionImgWrapper>
                 <HeroSectionImg/>
-                {/*<HeroSectionImgAb/>*/}
+                <HeroSectionImgAb/>
             </HeroSectionImgWrapper>
         </HeroSectionContainer>
     )

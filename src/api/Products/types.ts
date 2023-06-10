@@ -7,5 +7,6 @@ export interface IProduct {
     image: string
 }
 
+
 export type ProductCreated = Omit<IProduct, 'id'>;
 export type ProductUpdated = Partial<IProduct>;

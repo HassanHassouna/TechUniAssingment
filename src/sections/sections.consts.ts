@@ -121,3 +121,39 @@ export const TestimonialsData = [
     },
 
 ]
+
+export const Recomnded4U = [
+    {
+        title: "Classic Blouse IX",
+        price: '$1000',
+    },
+    {
+        title: "Classic Blouse IX",
+        price: '$1000',
+    },
+    {
+        title: "Classic Blouse IX",
+        price: '$1000',
+    },
+    {
+        title: "Classic Blouse IX",
+        price: '$1000',
+    },
+    {
+        title: "Classic Blouse IX",
+        price: '$1000',
+    },
+    {
+        title: "Classic Blouse IX",
+        price: '$1000',
+    },
+    {
+        title: "Classic Blouse IX",
+        price: '$1000',
+    },
+    {
+        title: "Classic Blouse IX",
+        price: '$1000',
+    },
+
+]

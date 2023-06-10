@@ -42,18 +42,22 @@ export const iconsItems = [
 export const socialLinks = [
     {
         title: 'Fb',
+        name: 'Facebook',
         link: 'https://www.facebook.com/',
     },
     {
         title: 'Tw',
+        name: 'Twitter',
         link: 'https://twitter.com/',
     },
     {
         title: 'Ig',
+        name: 'Instagram',
         link: 'https://www.instagram.com/',
     },
     {
         title: 'Yt',
+        name: 'Youtube',
         link: 'https://www.youtube.com/',
     }
 ];

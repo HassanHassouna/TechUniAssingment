@@ -8,13 +8,13 @@ import {
     Card,
     CardTitle,
     LikeButton,
-    BestSellerSectionContainer,
+    SectionContainer,
     CardsSlider
 } from "./sections.styled";
 
 export const BestSeller: FC = () => {
     return (
-        <BestSellerSectionContainer>
+        <SectionContainer>
             <Title>Best Seller</Title>
             <CardsSlider>
                 {BestSellerData.map(({title, subtitle, price, category}, index) => (
@@ -29,6 +29,6 @@ export const BestSeller: FC = () => {
                     </div>
                 ))}
             </CardsSlider>
-        </BestSellerSectionContainer>
+        </SectionContainer>
     )
 }

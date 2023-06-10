@@ -86,14 +86,19 @@ export const HeroSectionImg = styled.div`
 `
 export const HeroSectionImgAb = styled.div`
   position: absolute;
-  //width: 504px;
+  width: 504px;
   background: #E2E2EA;
   top: 0;
   bottom: 0;
-  //right: -5%;
-  @media screen and (max-width: 768px) {
+  overflow: hidden;
+  right: -5%;
+  @media screen and (max-width: 1440px) {
+    right: -25%;
+  }
+  @media screen and (max-width: 1024px) {
     width: 0;
   }
+
 `
 
 export const HeroSectionImgWrapper = styled.div`
@@ -383,7 +388,7 @@ export const DiscountBoxButton = styled.button`
   margin-top: 1rem;
 `
 
-export const BestSellerSectionContainer = styled.div`
+export const SectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -438,3 +443,225 @@ export const TestimonialCardPhoto = styled.img`
 `
 
 
+export const FooterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F86338;
+  height: 476px;
+  width: 100%;
+  margin-top: 5rem;
+`
+
+export const FooterWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 5rem;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+`
+
+export const FooterLogo = styled.img`
+  object-fit: contain;
+  margin-right: 1rem;
+  filter: invert(100%);
+`
+
+export const FooterLinksContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+`
+
+export const FooterLinksWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
+`
+
+
+export const FooterSocialsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 50%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const FooterSocialsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const FooterContact = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const FooterContactWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 30%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const FooterContactText = styled.p`
+  color: white;
+  transition: 0.2s ease-out;
+  text-align: left;
+  width: 100%;
+
+`
+
+export const FooterContactWrapperTitle = styled.div`
+  display: flex;
+  color: white;
+  align-items: center;
+  width: 100%;
+`
+
+
+export const ShopHeroContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5rem;
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+`
+
+export const ShopHeroWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 5rem;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+`
+
+
+export const ShopHeroText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const ShopHeroTitle = styled.h1`
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 1rem;
+  text-align: start;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+`
+
+export const ShopHeroSubtitle = styled.p`
+  font-size: clamp(1rem, 6vw, 1.5rem);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: start;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(0.8rem, 6vw, 1rem);
+  }
+`
+
+export const ShopHeroImage = styled.div`
+  width: 100%;
+  height: 400px;
+  background: #E2E2EA;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+
+export const ShopProductsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 5rem;
+  margin-bottom: 5rem;
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+`
+
+export const ShopProductsCategories = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9A9AB0;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+`
+
+
+export const GridCardsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  grid-gap: 1rem;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 1rem;
+  }
+`
+
+
+export const CategoryContainer = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+
+  &.active {
+    color: #F86338;
+    transition: 0.2s ease-out;
+  }
+`;
