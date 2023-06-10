@@ -157,3 +157,34 @@ export const Recomnded4U = [
     },
 
 ]
+
+export const Colors = [
+    {
+        color: '#000000',
+    },
+    {
+        color: 'rgba(180,144,55,0.5)',
+    },
+    {
+        color: '#ff0000',
+    }
+    ,
+    {
+        color: '#00ff00',
+    }
+    ,
+    {
+        color: '#0000ff',
+    }
+    ,
+    {
+        color: '#ffff00',
+    },
+    {
+        color: '#00ffff',
+    }
+    ,
+    {
+        color: '#ff00ff',
+    }
+]

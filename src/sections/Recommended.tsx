@@ -3,7 +3,6 @@ import {Recomnded4U} from './sections.consts'
 import {
     Card,
     CardPrice,
-    CardsSlider,
     CardTitle, GridCardsContainer,
     SectionContainer,
     Title

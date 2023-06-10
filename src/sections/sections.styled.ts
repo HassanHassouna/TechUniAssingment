@@ -58,7 +58,7 @@ export const HeroSectionBtn = styled.button`
   align-items: center;
   font-size: 1.4rem;
   align-self: start;
-  width: 120px;
+  min-width: 120px;
   height: 56px;
   border: none;
   background: #F86338;
@@ -271,6 +271,8 @@ export const Card = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 80vw;
+    margin-right: 1rem;
+
   }
 `
 
@@ -471,28 +473,6 @@ export const FooterLogo = styled.img`
   filter: invert(100%);
 `
 
-export const FooterLinksContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 50%;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-`
-
-export const FooterLinksWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 50%;
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    width: 100%;
-  }
-`
-
 
 export const FooterSocialsContainer = styled.div`
   display: flex;
@@ -569,7 +549,6 @@ export const ShopHeroWrapper = styled.div`
   padding: 0 5rem;
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    padding: 0 1rem;
   }
 `
 
@@ -636,20 +615,20 @@ export const ShopProductsCategories = styled.div`
   color: #9A9AB0;
   width: 100%;
   @media screen and (max-width: 768px) {
-    height: 100%;
+    width: 90vw;
   }
 `
 
 
 export const GridCardsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  grid-gap: 1rem;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+
   @media screen and (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 1rem;
+    flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -664,4 +643,44 @@ export const CategoryContainer = styled.div`
     color: #F86338;
     transition: 0.2s ease-out;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
+
+
+export const SideFilterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  width: 20%;
+  margin-bottom: 5rem;
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+`
+
+
+export const SideFilterTitle = styled.h1`
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  text-align: start;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(1rem, 6vw, 1.5rem);
+  }
+`
+
+
+export const SideFilterColor = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: ${props => props.color};
+  cursor: pointer;
+`
