@@ -6,8 +6,8 @@ import {
     CategoryCardTitle,
     CategoryTextWrapper,
     CategoryCardSubTitle
-} from './sections.styled'
-import {Categories} from './sections.consts'
+} from '../../sections/sections.styled'
+import {Categories} from '../../sections/sections.consts'
 
 export const CategoriesShop: FC = () => {
     return (

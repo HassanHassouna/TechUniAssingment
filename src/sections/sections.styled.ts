@@ -330,7 +330,7 @@ export const DiscountSectionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 5rem;
+  padding: ${props => props.property ? props.property : '0 5rem'};
   position: relative;
   margin-bottom: 5rem;
   @media screen and (max-width: 768px) {
@@ -653,10 +653,10 @@ export const CategoryContainer = styled.div`
 export const SideFilterContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   width: 20%;
+  padding: 0 5rem;
   margin-bottom: 5rem;
   @media screen and (max-width: 768px) {
     height: 100%;
@@ -665,22 +665,31 @@ export const SideFilterContainer = styled.div`
 
 
 export const SideFilterTitle = styled.h1`
-  font-size: clamp(1.5rem, 6vw, 2rem);
+  display: flex;
+  flex-direction: column;
   text-align: start;
   width: 100%;
-  @media screen and (max-width: 768px) {
-    font-size: clamp(1rem, 6vw, 1.5rem);
-  }
+  height: fit-content;
+  margin: 0;
+`
+
+export const SideFilterColorTitle = styled.h1`
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 60%;
+  height: fit-content;
+  margin: 0;
+
 `
 
 
 export const SideFilterColor = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background: ${props => props.color};
   cursor: pointer;
+
 `

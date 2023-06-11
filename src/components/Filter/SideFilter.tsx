@@ -2,15 +2,15 @@ import {FC, useEffect} from "react";
 import {
     CategoryContainer,
     GridCardsContainer,
-    SideFilterColor,
+    SideFilterColor, SideFilterColorTitle,
     SideFilterContainer,
     SideFilterTitle
-} from "./sections.styled";
+} from "../../sections/sections.styled";
 import Slider from '@mui/material/Slider';
-import {getAllCategories, getProductBySpecificCategory} from "../api";
-import {IProduct} from "../api/Products/types";
-import {Discount} from "./Discount";
-import {Colors} from './sections.consts'
+import {getAllCategories, getProductBySpecificCategory} from "../../api";
+import {IProduct} from "../../api/Products/types";
+import {Discount} from "../../sections/Discount";
+import {Colors} from '../../sections/sections.consts'
 
 interface IProps {
     activeCategory: string | null;
@@ -48,7 +48,10 @@ export const SideFilter: FC<IProps> = ({
     return (
         <SideFilterContainer>
             <SideFilterTitle>
-                <h3>Price</h3>
+                <h3 style={{
+                    margin: '0',
+                    marginBottom: '1rem'
+                }}>Price</h3>
                 <Slider
                     getAriaLabel={() => 'Temperature range'}
                     value={filterByPrice}
@@ -66,7 +69,7 @@ export const SideFilter: FC<IProps> = ({
                     <h6>$5-$2000</h6>
                 </div>
             </SideFilterTitle>
-            <SideFilterTitle>
+            <SideFilterColorTitle>
                 <h3>Colors</h3>
                 <GridCardsContainer>
 
@@ -77,7 +80,7 @@ export const SideFilter: FC<IProps> = ({
                         }
                     )}
                 </GridCardsContainer>
-            </SideFilterTitle>
+            </SideFilterColorTitle>
             <SideFilterTitle>
                 <h3>Categories</h3>
                 {categories ? (
@@ -99,7 +102,7 @@ export const SideFilter: FC<IProps> = ({
                 ) : (
                     <p>Loading categories...</p>
                 )}
-                <Discount/>
+                <Discount padding={'0'}/>
             </SideFilterTitle>
         </SideFilterContainer>
     )

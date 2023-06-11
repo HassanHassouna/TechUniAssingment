@@ -1,16 +1,25 @@
 import {FC, useState} from "react";
 import {ShopHero} from "../sections/ShopHero";
-import {SideFilter} from "../sections/SideFilter";
-import {CategoriesShop} from "../sections/Categories";
+import {SideFilter} from "../components/Filter/SideFilter";
+import {CategoriesShop} from "../components/Categories/Categories";
 import '../App.css'
 import {IProduct} from "../api/Products/types";
 import {Recommended} from "../sections/Recommended";
+import {Search} from "../components/Filter/Search";
+import {SortBy} from "../components/Filter/SortBy";
 
-export const ShopWithFilter: FC = () => {
+interface IProps {
+    productId?: string;
+    setProductId: (productId: string) => void;
+}
+
+export const ShopWithFilter: FC<IProps> = ({productId, setProductId}) => {
     const [categories, setCategories] = useState<Array<string> | null>(null);
     const [products, setProducts] = useState<IProduct | null>(null);
     const [activeCategory, setActiveCategory] = useState<string | null>('all');
+    const [sort, setSort] = useState<string>("");
     const [filterByPrice, setFilterByPrice] = useState<number[]>([20, 200]);
+    const [searchFilter, setSearchFilter] = useState<string>("");
     const handleCategoryClick = (category: string) => {
         setActiveCategory(category === activeCategory ? null : category);
     };
@@ -26,9 +35,17 @@ export const ShopWithFilter: FC = () => {
                             setProducts={setProducts} handleCategoryClick={handleCategoryClick}
                             handleChange={handleChange} filterByPrice={filterByPrice}/>
 
-                <CategoriesShop activeCategory={activeCategory} categories={categories} setCategories={setCategories}
-                                products={products} setProducts={setProducts}
-                                handleCategoryClick={handleCategoryClick} filterByPrice={filterByPrice}/>
+                <div style={{
+                    marginRight: "5rem"
+                }}>
+                    <Search setSearchFilter={setSearchFilter}/>
+                    <SortBy setSort={setSort}/>
+                    <CategoriesShop activeCategory={activeCategory} categories={categories}
+                                    setCategories={setCategories}
+                                    products={products} setProducts={setProducts}
+                                    handleCategoryClick={handleCategoryClick} filterByPrice={filterByPrice}
+                                    setProductId={setProductId} sort={sort} searchFilter={searchFilter}/>
+                </div>
             </div>
             <Recommended/>
         </div>

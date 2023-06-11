@@ -10,28 +10,48 @@ import {
 import {Link} from 'react-router-dom'
 import Vector from "../assets/vector.png";
 
-export const ShopHero: FC = () => {
+
+interface IProps {
+    title?: string;
+    subtitle?: string;
+
+}
+
+export const ShopHero: FC<IProps> = ({title, subtitle}) => {
     return (
         <ShopHeroContainer>
             <ShopHeroWrapper>
                 <ShopHeroText>
-                    <ShopHeroSubtitle>{`Home > Shop`}</ShopHeroSubtitle>
-                    <ShopHeroTitle>Shop</ShopHeroTitle>
+
+                    {
+                        title && subtitle ?
+                            <ShopHeroSubtitle>{`Home > Shop > ${title} > ${subtitle}`}</ShopHeroSubtitle>
+                            :
+                            <ShopHeroSubtitle>{`Home > Shop`}</ShopHeroSubtitle>
+                    }
+                    {
+                        title ?
+                            <ShopHeroTitle>{subtitle}</ShopHeroTitle>
+                            :
+                            <ShopHeroTitle>Shop</ShopHeroTitle>
+                    }
                     {
                         window.location.pathname.includes('filter') ? '' :
-                            <HeroSectionBtn>
-                                <Link style={{
-                                    textDecoration: 'none',
-                                    color: 'white',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'space-around',
-                                    width: '100%'
-                                }} to="/shop/filter">
-                                    <span>Shop with filters</span>
-                                    <img src={Vector} alt="vector"/>
-                                </Link>
-                            </HeroSectionBtn>
+                            window.location.pathname.includes('detail') ? ''
+                                :
+                                <HeroSectionBtn>
+                                    <Link style={{
+                                        textDecoration: 'none',
+                                        color: 'white',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-around',
+                                        width: '100%'
+                                    }} to="/shop/filter">
+                                        <span>Shop with filters</span>
+                                        <img src={Vector} alt="vector"/>
+                                    </Link>
+                                </HeroSectionBtn>
                     }
                 </ShopHeroText>
             </ShopHeroWrapper>

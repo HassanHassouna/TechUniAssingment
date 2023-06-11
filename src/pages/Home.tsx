@@ -1,6 +1,6 @@
 import {FC} from "react";
 import {Hero} from "../sections/Hero";
-import {CategoriesShop} from "../sections/CategoriesShop";
+import {CategoriesShop} from "../components/Categories/CategoriesShop";
 import {NewArrival} from "../sections/NewArrival";
 import {Discount} from "../sections/Discount";
 import {BestSeller} from "../sections/BestSeller";

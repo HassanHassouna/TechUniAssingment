@@ -7,9 +7,14 @@ import {
     DiscountSectionContainer
 } from './sections.styled'
 
-export const Discount: FC = () => {
+
+interface IProps {
+    padding?: string;
+}
+
+export const Discount: FC<IProps> = ({padding}) => {
     return (
-        <DiscountSectionContainer>
+        <DiscountSectionContainer property={padding}>
             <DiscountBox>
                 <DiscountBoxSubTitle>March Discount</DiscountBoxSubTitle>
                 <DiscountBoxTitle>Up to 70% Off</DiscountBoxTitle>

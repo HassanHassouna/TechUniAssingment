@@ -1,6 +1,7 @@
 import {FC, useEffect} from "react";
-import {getAllCategories, getProductBySpecificCategory, getAllProducts} from "../api";
-import {IProduct} from "../api/Products/types";
+import {getAllCategories, getProductBySpecificCategory, getAllProducts, getProductBySort} from "../../api";
+import {Link} from 'react-router-dom'
+import {IProduct} from "../../api/Products/types";
 import {
     ShopProductsContainer,
     ShopProductsCategories,
@@ -12,7 +13,7 @@ import {
     CardCategory,
     CardSubTitle,
     GridCardsContainer
-} from './sections.styled'
+} from '../../sections/sections.styled'
 
 
 interface IProps {
@@ -23,6 +24,9 @@ interface IProps {
     setProducts: (products: IProduct) => void;
     handleCategoryClick: (category: string) => void;
     filterByPrice?: number[];
+    setProductId: (productId: string) => void;
+    sort?: string;
+    searchFilter?: string;
 }
 
 export const CategoriesShop: FC<IProps> = ({
@@ -32,22 +36,25 @@ export const CategoriesShop: FC<IProps> = ({
                                                products,
                                                setProducts,
                                                handleCategoryClick,
-                                               filterByPrice
+                                               filterByPrice,
+                                               setProductId,
+                                               sort,
+                                               searchFilter
                                            }) => {
     useEffect(() => {
-        const fetchCategories = async () => {
+
+        const fetchData = async () => {
             try {
                 const categories = await getAllCategories();
-                const products = await getAllProducts();
+                const products = await getProductBySort(sort === 'newest' ? 'asc' : 'desc' || 'asc');
                 setCategories(categories);
                 setProducts(products);
             } catch (error) {
-                console.error('Error fetching categories:', error);
+                console.error('Error fetching: ', error);
             }
         };
-        fetchCategories()
-    }, []);
-
+        fetchData()
+    }, [sort]);
 
     return (
         <ShopProductsContainer>
@@ -98,7 +105,59 @@ export const CategoriesShop: FC<IProps> = ({
                                             width: '400px',
                                         }}
                                              key={index}>
-                                            <Card>
+                                            <Link to={`/detail/${value.id}`}>
+                                                <Card onClick={() => setProductId(value.id)}>
+                                                    <LikeButton/>
+                                                    <img style={{
+                                                        width: '70%',
+                                                        height: '100%',
+                                                        objectFit: 'contain',
+                                                        mixBlendMode: 'multiply',
+
+                                                    }} src={value.image} alt={value?.title}/>
+                                                </Card>
+                                            </Link>
+                                            <CardTitle>{value?.title}</CardTitle>
+                                            <CardCategory>{value.category}</CardCategory>
+                                            <CardSubTitle>{value.description}</CardSubTitle>
+                                            <CardPrice>${value.price}</CardPrice>
+                                        </div>
+                                    )
+                                } else if (typeof searchFilter === 'string') {
+                                    if (value.title.toLowerCase().includes(searchFilter.toLowerCase())) {
+                                        return (
+                                            <div style={{
+                                                width: '400px',
+                                            }}
+                                                 key={index}>
+                                                <Link to={`/detail/${value.id}`}>
+                                                    <Card onClick={() => setProductId(value.id)}>
+                                                        <LikeButton/>
+                                                        <img style={{
+                                                            width: '70%',
+                                                            height: '100%',
+                                                            objectFit: 'contain',
+                                                            mixBlendMode: 'multiply',
+
+                                                        }} src={value.image} alt={value?.title}/>
+                                                    </Card>
+                                                </Link>
+                                                <CardTitle>{value?.title}</CardTitle>
+                                                <CardCategory>{value.category}</CardCategory>
+                                                <CardSubTitle>{value.description}</CardSubTitle>
+                                                <CardPrice>${value.price}</CardPrice>
+                                            </div>
+                                        )
+                                    }
+                                }
+                            } else {
+                                return (
+                                    <div style={{
+                                        width: '400px',
+                                    }}
+                                         key={index}>
+                                        <Link to={`/detail/${value.id}`}>
+                                            <Card onClick={() => setProductId(value.id)}>
                                                 <LikeButton/>
                                                 <img style={{
                                                     width: '70%',
@@ -108,29 +167,7 @@ export const CategoriesShop: FC<IProps> = ({
 
                                                 }} src={value.image} alt={value?.title}/>
                                             </Card>
-                                            <CardTitle>{value?.title}</CardTitle>
-                                            <CardCategory>{value.category}</CardCategory>
-                                            <CardSubTitle>{value.description}</CardSubTitle>
-                                            <CardPrice>${value.price}</CardPrice>
-                                        </div>
-                                    )
-                                }
-                            } else {
-                                return (
-                                    <div style={{
-                                        width: '400px',
-                                    }}
-                                         key={index}>
-                                        <Card>
-                                            <LikeButton/>
-                                            <img style={{
-                                                width: '70%',
-                                                height: '100%',
-                                                objectFit: 'contain',
-                                                mixBlendMode: 'multiply',
-
-                                            }} src={value.image} alt={value?.title}/>
-                                        </Card>
+                                        </Link>
                                         <CardTitle>{value?.title}</CardTitle>
                                         <CardCategory>{value.category}</CardCategory>
                                         <CardSubTitle>{value.description}</CardSubTitle>
