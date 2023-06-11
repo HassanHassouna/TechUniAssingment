@@ -188,3 +188,23 @@ export const Colors = [
         color: '#ff00ff',
     }
 ]
+
+
+export const sizes = [
+    {
+        size: 'Select size'
+    },
+    {
+        size: 'S',
+    }
+    ,
+    {
+        size: 'M',
+    },
+    {
+        size: 'L',
+    },
+    {
+        size: 'XL',
+    }
+]

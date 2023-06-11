@@ -693,3 +693,85 @@ export const SideFilterColor = styled.div`
   cursor: pointer;
 
 `
+
+export const ProductDetailsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 5rem;
+  margin-bottom: 5rem;
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+`
+
+export const ProductImagesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  position: relative;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const ProductImage = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const ProductImages = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #E2E2EA;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const ProductDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  padding: 0 5rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const ProductDetailsAvailability = styled.h4`
+  font-size: clamp(0.8rem, 6vw, 1rem);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: start;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(0.8rem, 6vw, 1rem);
+  }
+`
+
+export const ProductDetailsSub = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`

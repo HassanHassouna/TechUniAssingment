@@ -10,6 +10,7 @@ import {Detail} from "./pages/Detail";
 
 function App() {
     const [productId, setProductId] = useState<string>("");
+    const [quantity, setQuantity] = useState<number>(1);
     return (
         <div className="App">
             <Navbar/>
@@ -19,7 +20,8 @@ function App() {
                 <Route path="/contact" element={<div>Contact</div>}/>
                 <Route path="/shop" element={<Shop setProductId={setProductId}/>}/>
                 <Route path="/shop/filter" element={<ShopWithFilter setProductId={setProductId}/>}/>
-                <Route path="/detail/:id" element={<Detail productId={productId}/>}/>
+                <Route path="/detail/:id"
+                       element={<Detail quantity={quantity} setQuantity={setQuantity} productId={productId}/>}/>
             </Routes>
             <Footer/>
         </div>

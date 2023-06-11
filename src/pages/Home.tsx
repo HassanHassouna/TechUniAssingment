@@ -13,7 +13,7 @@ export const Home: FC = () => {
             <CategoriesShop/>
             <NewArrival/>
             <Discount/>
-            <BestSeller/>
+            <BestSeller title='Best Seller'/>
             <Testimonials/>
         </div>
     )

@@ -12,10 +12,14 @@ import {
     CardsSlider
 } from "./sections.styled";
 
-export const BestSeller: FC = () => {
+interface IProps {
+    title: string
+}
+
+export const BestSeller: FC<IProps> = ({title}) => {
     return (
         <SectionContainer>
-            <Title>Best Seller</Title>
+            <Title>{title}</Title>
             <CardsSlider>
                 {BestSellerData.map(({title, subtitle, price, category}, index) => (
                     <div key={index}>
