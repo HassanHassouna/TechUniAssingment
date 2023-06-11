@@ -27,31 +27,39 @@ export const ShopHero: FC<IProps> = ({title, subtitle}) => {
                         title && subtitle ?
                             <ShopHeroSubtitle>{`Home > Shop > ${title} > ${subtitle}`}</ShopHeroSubtitle>
                             :
-                            <ShopHeroSubtitle>{`Home > Shop`}</ShopHeroSubtitle>
+                            window.location.pathname.includes('cart') ?
+                                <ShopHeroSubtitle>{`Home > Shopping Bag`}</ShopHeroSubtitle>
+                                :
+                                <ShopHeroSubtitle>{`Home > Shop`}</ShopHeroSubtitle>
                     }
                     {
                         title ?
                             <ShopHeroTitle>{subtitle}</ShopHeroTitle>
                             :
-                            <ShopHeroTitle>Shop</ShopHeroTitle>
+                            window.location.pathname.includes('cart') ?
+                                <ShopHeroTitle>Shopping Bag</ShopHeroTitle>
+                                :
+                                <ShopHeroTitle>Shop</ShopHeroTitle>
                     }
                     {
                         window.location.pathname.includes('filter') ? '' :
                             window.location.pathname.includes('detail') ? ''
                                 :
-                                <HeroSectionBtn>
-                                    <Link style={{
-                                        textDecoration: 'none',
-                                        color: 'white',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'space-around',
-                                        width: '100%'
-                                    }} to="/shop/filter">
-                                        <span>Shop with filters</span>
-                                        <img src={Vector} alt="vector"/>
-                                    </Link>
-                                </HeroSectionBtn>
+                                window.location.pathname.includes('cart') ? ''
+                                    :
+                                    <HeroSectionBtn>
+                                        <Link style={{
+                                            textDecoration: 'none',
+                                            color: 'white',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-around',
+                                            width: '100%'
+                                        }} to="/shop/filter">
+                                            <span>Shop with filters</span>
+                                            <img src={Vector} alt="vector"/>
+                                        </Link>
+                                    </HeroSectionBtn>
                     }
                 </ShopHeroText>
             </ShopHeroWrapper>

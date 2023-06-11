@@ -1,4 +1,4 @@
-import {FC, useEffect} from "react";
+import {FC, useEffect, useState} from "react";
 import {getAllCategories, getProductBySpecificCategory, getAllProducts, getProductBySort} from "../../api";
 import {Link} from 'react-router-dom'
 import {IProduct} from "../../api/Products/types";
@@ -41,12 +41,13 @@ export const CategoriesShop: FC<IProps> = ({
                                                sort,
                                                searchFilter
                                            }) => {
+
     useEffect(() => {
 
         const fetchData = async () => {
             try {
                 const categories = await getAllCategories();
-                const products = await getProductBySort(sort === 'newest' ? 'asc' : 'desc' || 'asc');
+                const products = await getProductBySort(sort === 'newest' ? 'asc' : 'desc');
                 setCategories(categories);
                 setProducts(products);
             } catch (error) {
@@ -98,8 +99,8 @@ export const CategoriesShop: FC<IProps> = ({
                 {products ? (
                     Object.values(products)?.map((value, index) => {
                             const price = value.price;
-                            if (filterByPrice) {
-                                if (price >= filterByPrice[0] && price <= filterByPrice[1]) {
+                            if (filterByPrice && searchFilter) {
+                                if (price >= filterByPrice[0] && price <= filterByPrice[1] && value.title.toLowerCase().includes(searchFilter.toLowerCase())) {
                                     return (
                                         <div style={{
                                             width: '400px',
@@ -123,32 +124,6 @@ export const CategoriesShop: FC<IProps> = ({
                                             <CardPrice>${value.price}</CardPrice>
                                         </div>
                                     )
-                                } else if (typeof searchFilter === 'string') {
-                                    if (value.title.toLowerCase().includes(searchFilter.toLowerCase())) {
-                                        return (
-                                            <div style={{
-                                                width: '400px',
-                                            }}
-                                                 key={index}>
-                                                <Link to={`/detail/${value.id}`}>
-                                                    <Card onClick={() => setProductId(value.id)}>
-                                                        <LikeButton/>
-                                                        <img style={{
-                                                            width: '70%',
-                                                            height: '100%',
-                                                            objectFit: 'contain',
-                                                            mixBlendMode: 'multiply',
-
-                                                        }} src={value.image} alt={value?.title}/>
-                                                    </Card>
-                                                </Link>
-                                                <CardTitle>{value?.title}</CardTitle>
-                                                <CardCategory>{value.category}</CardCategory>
-                                                <CardSubTitle>{value.description}</CardSubTitle>
-                                                <CardPrice>${value.price}</CardPrice>
-                                            </div>
-                                        )
-                                    }
                                 }
                             } else {
                                 return (
@@ -186,3 +161,4 @@ export const CategoriesShop: FC<IProps> = ({
         </ShopProductsContainer>
     )
 }
+

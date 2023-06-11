@@ -7,6 +7,7 @@ import {Footer} from "./sections/Footer";
 import {Shop} from "./pages/Shop";
 import {ShopWithFilter} from "./pages/ShopWithFilter";
 import {Detail} from "./pages/Detail";
+import {Cart} from "./pages/Cart";
 
 function App() {
     const [productId, setProductId] = useState<string>("");
@@ -15,13 +16,14 @@ function App() {
         <div className="App">
             <Navbar/>
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<Home setProductId={setProductId}/>}/>
                 <Route path="/about" element={<div>About</div>}/>
                 <Route path="/contact" element={<div>Contact</div>}/>
                 <Route path="/shop" element={<Shop setProductId={setProductId}/>}/>
                 <Route path="/shop/filter" element={<ShopWithFilter setProductId={setProductId}/>}/>
                 <Route path="/detail/:id"
                        element={<Detail quantity={quantity} setQuantity={setQuantity} productId={productId}/>}/>
+                <Route path='/cart' element={<Cart/>}/>
             </Routes>
             <Footer/>
         </div>

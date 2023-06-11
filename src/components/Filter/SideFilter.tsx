@@ -58,7 +58,7 @@ export const SideFilter: FC<IProps> = ({
                     onChange={handleChange}
                     valueLabelDisplay="auto"
                     min={5}
-                    max={2000}
+                    max={1000}
                 />
                 <div style={{
                     display: 'flex',
@@ -66,7 +66,7 @@ export const SideFilter: FC<IProps> = ({
                     marginTop: '-2rem'
                 }}>
                     <h6>Range</h6>
-                    <h6>$5-$2000</h6>
+                    <h6>$5-$1000</h6>
                 </div>
             </SideFilterTitle>
             <SideFilterColorTitle>

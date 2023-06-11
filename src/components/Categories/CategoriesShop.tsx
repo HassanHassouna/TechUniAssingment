@@ -1,4 +1,3 @@
-import {FC} from "react";
 import {
     CategorySectionCard,
     CategorySectionContainer,
@@ -7,22 +6,45 @@ import {
     CategoryTextWrapper,
     CategoryCardSubTitle
 } from '../../sections/sections.styled'
-import {Categories} from '../../sections/sections.consts'
+import {getProductByLimit} from "../../api";
+import {FC, useEffect, useState} from "react";
+import {Link} from 'react-router-dom'
+import Next from '../../assets/next.png'
 
-export const CategoriesShop: FC = () => {
+interface IProps {
+    setProductId: (productId: string) => void;
+}
+
+export const CategoriesShop: FC<IProps> = ({setProductId}) => {
+    const [products, setProducts] = useState<any>([])
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const products = await getProductByLimit(6)
+            setProducts(products)
+        }
+        fetchProducts()
+    }, [])
+
     return (
         <CategorySectionContainer>
-            {Categories.map(({title, subtitle, button}, index) => (
-                <CategorySectionCard key={index}>
-                    <CategoryTextWrapper>
-                        <CategoryCardTitle>{title}</CategoryCardTitle>
-                        <CategoryCardSubTitle>{subtitle}</CategoryCardSubTitle>
-                        <CategoryCardButton>
-                            <img src={button} alt={button}/>
-                        </CategoryCardButton>
-                    </CategoryTextWrapper>
-                </CategorySectionCard>
-            ))}
+            {
+                products.map((product: any, index: number) => (
+                    <CategorySectionCard key={index}>
+                        <CategoryTextWrapper>
+                            <CategoryCardTitle>{product.title}</CategoryCardTitle>
+                            <CategoryCardSubTitle>{product.description}</CategoryCardSubTitle>
+                            <Link to={`/detail/${product.id}`}>
+                                <CategoryCardButton onClick={() => {
+                                    setProductId(product.id)
+                                }}>
+                                    <img src={Next} alt={product.title}/>
+                                </CategoryCardButton>
+                            </Link>
+                        </CategoryTextWrapper>
+                    </CategorySectionCard>
+                ))
+            }
         </CategorySectionContainer>
     )
 }
+

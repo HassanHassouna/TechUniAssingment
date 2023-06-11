@@ -1,36 +1,29 @@
-import Next from '../assets/next.png'
 import Logo from '../assets/logo.png'
 
 export const Categories = [
     {
         title: 'Dresses',
         subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        button: Next,
     },
     {
         title: 'Dresses',
         subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        button: Next,
     },
     {
         title: 'Dresses',
         subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        button: Next,
     },
     {
         title: 'Dresses',
         subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        button: Next,
     },
     {
         title: 'Dresses',
         subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        button: Next,
     },
     {
         title: 'Dresses',
         subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        button: Next,
     },
 ]
 

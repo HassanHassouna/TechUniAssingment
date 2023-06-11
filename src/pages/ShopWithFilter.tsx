@@ -18,7 +18,7 @@ export const ShopWithFilter: FC<IProps> = ({productId, setProductId}) => {
     const [products, setProducts] = useState<IProduct | null>(null);
     const [activeCategory, setActiveCategory] = useState<string | null>('all');
     const [sort, setSort] = useState<string>("");
-    const [filterByPrice, setFilterByPrice] = useState<number[]>([20, 200]);
+    const [filterByPrice, setFilterByPrice] = useState<number[]>([5, 1000]);
     const [searchFilter, setSearchFilter] = useState<string>("");
     const handleCategoryClick = (category: string) => {
         setActiveCategory(category === activeCategory ? null : category);

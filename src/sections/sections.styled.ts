@@ -660,6 +660,7 @@ export const SideFilterContainer = styled.div`
   margin-bottom: 5rem;
   @media screen and (max-width: 768px) {
     height: 100%;
+    width: 80vw;
   }
 `
 
@@ -775,3 +776,225 @@ export const ProductDetailsSub = styled.div`
     width: 100%;
   }
 `
+
+export const CartDetailContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0 5rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const CartDetailTitlesContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  border-radius: 8px;
+  background: #F86338;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const CartDetailTitle = styled.h4`
+  font-size: clamp(0.8rem, 6vw, 1rem);
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(0.8rem, 6vw, 1rem);
+  }
+`
+
+export const CartDetailSub = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const CartDetailImg = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const CartDetailName = styled.h4`
+  font-size: clamp(0.8rem, 6vw, 1rem);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(0.8rem, 6vw, 1rem);
+  }
+`
+
+export const CartDetailPrice = styled.h4`
+  font-size: clamp(0.8rem, 6vw, 1rem);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(0.8rem, 6vw, 1rem);
+  }
+`
+
+export const CartDetailQuantity = styled.h4`
+  font-size: clamp(0.8rem, 6vw, 1rem);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(0.8rem, 6vw, 1rem);
+  }
+`
+
+export const CartDetailTotal = styled.h4`
+  font-size: clamp(0.8rem, 6vw, 1rem);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(0.8rem, 6vw, 1rem);
+  }
+`
+
+export const CartDetailCoupon = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #FFEFEB;
+  width: 100%;
+  height: 350px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+export const CheckOutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  margin: 0 auto;
+  padding: 0 5rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const CheckOutTitle = styled.h1`
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: left;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+`
+
+export const CheckoutSubTitle = styled.h4`
+  font-size: clamp(0.8rem, 6vw, 1rem);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: left;
+  @media screen and (max-width: 768px) {
+    font-size: clamp(0.8rem, 6vw, 1rem);
+  }
+`
+
+export const CheckOutForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const CheckOutInput = styled.input`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20px;
+  border-radius: 8px;
+  border: 1px solid #F86338;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const CheckOutSelect = styled.select`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #F86338;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+export const CheckOutButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #F86338;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #F86338;
+  color: #fff;
+  font-size: clamp(0.8rem, 6vw, 1rem);
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background: #fff;
+    color: #F86338;
+    transition: 0.2s ease-in-out;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`
+
